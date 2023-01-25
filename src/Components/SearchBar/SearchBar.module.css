@@ -1,0 +1,33 @@
+.body {
+  border: none;
+  border-left: 1px solid darkgray;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  margin: 0 1em;
+}
+
+.icon {
+  margin: 0 0 0 1em;
+  font-weight: 100;
+  color: gray;
+}
+
+.input {
+  all: unset;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: gray;
+  padding: 0.3em;
+  flex-basis: 60%;
+}
+
+.input::placeholder {
+  color: gray;
+  font-style: italic;
+  opacity: 0.8;
+}

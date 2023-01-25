@@ -3,7 +3,7 @@
   border-radius: 7px;
   display: flex;
   flex: 1;
-  margin: 1%;
+  margin: 1em 0;
   flex-basis: 30%;
   flex-direction: column;
   align-items: flex-start;
@@ -67,6 +67,11 @@
 
 .artist {
   composes: smallText;
+  cursor: pointer;
+}
+
+.artist:hover {
+  text-decoration: underline;
 }
 
 .album {
