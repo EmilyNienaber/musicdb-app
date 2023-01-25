@@ -1,0 +1,10 @@
+.App {
+  text-align: left;
+}
+
+.contentBase {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1em 15em;
+}

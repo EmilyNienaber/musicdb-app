@@ -1,0 +1,74 @@
+.body {
+  border: 1px solid lightgray;
+  border-radius: 7px;
+  display: flex;
+  flex: 1;
+  margin: 1%;
+  flex-basis: 30%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 30%;
+  overflow: hidden;
+}
+
+.bodyImg {
+  flex: 2;
+  flex-grow: 1;
+  aspect-ratio: 1 / 1;
+  background-color: #eeeeee;
+  min-width: 100%;
+  position: relative;
+  border-bottom: 1px solid lightgray;
+}
+
+.smallText {
+  font-size: medium;
+  color: gray;
+}
+
+.infoPanel {
+  align-self: stretch;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1em;
+}
+
+.infoPanel p {
+  margin: 3px 0;
+}
+
+.titleRow {
+  display: flex;
+  justify-self: stretch;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+}
+
+.titleRow > p {
+  margin: 7px 0;
+}
+
+.title {
+  font-weight: 500;
+  flex: 2;
+  text-align: left;
+
+}
+
+.trackLength {
+  composes: smallText;
+}
+
+.artist {
+  composes: smallText;
+}
+
+.album {
+  font-size: medium;
+}
