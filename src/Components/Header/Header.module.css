@@ -12,4 +12,5 @@
   padding: 0 13vw;
   z-index: 100;
   font-size: large;
+  border-bottom: 1px solid gray;
 }
