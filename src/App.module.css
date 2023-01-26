@@ -4,6 +4,10 @@
   position: relative;
 }
 
+.App * {
+  box-sizing: border-box;
+}
+
 .contentBase {
   flex: 1;
   display: flex;
@@ -14,3 +18,4 @@
   justify-content: flex-start;
   gap: 3%;
 }
+
