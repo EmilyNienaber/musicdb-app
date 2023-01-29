@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useFetch } from "../../Hooks/Api";
 import styles from "./Artist.module.css";
+import { Context } from "../../Context/Context";
+import Loader from "../../Components/Loader/Loader";
 
 const Artist = () => {
+	const { id } = useParams();
+	const [state, dispatch] = useContext(Context);
+	const navigate = useNavigate();
+	const { getArtist } = useFetch(id || "");
+
+	useEffect(() => {
+		if (!id) {
+			navigate("/");
+		} else {
+			getArtist();
+		}
+	}, [id]);
+
+	if (!state.artist.name) {
+		return <Loader />;
+	}
+
 	return (
 		<div className={styles.body}>
 			<div className={styles.infoBanner}>
 				<div className={styles.imageContainer}>
-					<h1 className={styles.artistName}>Artist Name</h1>
+					<img
+						alt={`${state.artist.name}-bg-img`}
+						src={state.artist.picture_big}
+						className={styles.backgroundImage}
+					/>
+					<h1 className={styles.artistName}>{state.artist.name}</h1>
 					<div className={styles.fans}>
-						<b>111K</b> Fans
+						<b>{Math.floor(state.artist.nb_fan / 1000)}K</b> Fans
 					</div>
 					<p className={styles.artistInfo}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

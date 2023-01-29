@@ -39,6 +39,7 @@
 
 .infoPanel p {
   margin: 3px 0;
+
 }
 
 .titleRow {
@@ -76,4 +77,12 @@
 
 .album {
   font-size: medium;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 95%;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
 }

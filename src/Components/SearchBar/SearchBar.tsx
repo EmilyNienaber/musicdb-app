@@ -1,5 +1,6 @@
-import React, { BaseSyntheticEvent, useState } from "react";
+import React, { BaseSyntheticEvent, useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import { useFetch } from "../../Hooks/Api";
 import styles from "./SearchBar.module.css";
 
 const SearchBar = () => {
@@ -8,6 +9,23 @@ const SearchBar = () => {
 	const handleChange = (e: BaseSyntheticEvent) => {
 		setSearch(e.target.value);
 	};
+
+	const { getSearch } = useFetch(search);
+
+	useEffect(() => {
+		if (!search.length) {
+			return;
+		}
+		const searchTimeOut = setTimeout(() => {
+			getSearch();
+
+			console.log({ search });
+		}, 250);
+
+		return () => {
+			clearTimeout(searchTimeOut);
+		};
+	}, [search]);
 
 	return (
 		<div className={styles.body}>

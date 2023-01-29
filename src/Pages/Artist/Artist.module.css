@@ -26,10 +26,13 @@
   justify-content: center;
   padding: 2em 15em 10em 6em;
   background-color: lightgray;
+  position: relative;
+  overflow: hidden;
 }
 
 .imageContainer * {
   text-align: left;
+  z-index: 1;
 }
 
 .artistName {
@@ -77,4 +80,12 @@
   padding: 1em;
   border-left: 1px solid rgba(90, 90, 90, 0.5);
   height: 100%;
+}
+
+.backgroundImage {
+  position: absolute;
+  top:-50%;
+  left: 0;
+  width: 100%;
+  z-index: 0;
 }
