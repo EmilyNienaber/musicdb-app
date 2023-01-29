@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Card.module.css";
 
 interface Props {
@@ -7,6 +8,7 @@ interface Props {
 	trackLenght: string;
 	artistName: string;
 	albumName: string;
+	artistId: number;
 }
 
 const Card = ({
@@ -15,16 +17,26 @@ const Card = ({
 	trackLenght,
 	artistName,
 	albumName,
+	artistId,
 }: Props) => {
+	const navigate = useNavigate();
 	return (
 		<div className={styles.body}>
-			<div className={styles.bodyImg} />
+			<div className={styles.bodyImg}>
+				<img src={imageUri} className={styles.image} />
+			</div>
 			<div className={styles.infoPanel}>
 				<div className={styles.titleRow}>
 					<p className={styles.title}>{songName}</p>
 					<p className={styles.trackLength}>{trackLenght}</p>
 				</div>
-				<p className={styles.artist}>by {artistName}</p>
+				<p
+					className={styles.artist}
+					role='button'
+					onClick={() => navigate(`artist/${artistId}`)}
+				>
+					by {artistName}
+				</p>
 				<p className={styles.album}>{albumName}</p>
 			</div>
 		</div>
