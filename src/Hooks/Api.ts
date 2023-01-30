@@ -16,16 +16,14 @@ export const useFetch = (path: string) => {
     }
   }
 
-  const getArtist = () => {
+  const doFetch = (uri: string, type: string) => {
     dispatch({type: "set_loading", payload: true})
     try {
-      fetch(`${baseUrl}artist/${path}`, params).then(resp => {
+      fetch(uri, params).then(resp => {
         try{
           resp.json().then(data => {
-            console.log({data});
-            dispatch({type: "set_artist", payload: data})
+            dispatch({type, payload: data})
             dispatch({type: "set_loading", payload: false})
-            // setData(resp)
         })
         } catch(e) {
           dispatch({type: "set_loading", payload: false})
@@ -38,26 +36,22 @@ export const useFetch = (path: string) => {
     }
   }
 
+  const getArtist = () => {
+    doFetch(`${baseUrl}artist/${path}`, "set_artist");
+    getAlbums();
+    getTopTracks();
+  }
+
+  const getAlbums = () => {
+    doFetch(`${baseUrl}artist/${path}/albums`, "set_albums")
+  }
+
+  const getTopTracks = () => {
+    doFetch(`${baseUrl}artist/${path}/top`, "set_top")
+  }
+
   const getSearch = () => {
-    dispatch({type: "set_loading", payload: true})
-    try {
-      fetch(`${baseUrl}search?q=${path}`, params).then(resp => {
-        try{
-          resp.json().then(data => {
-            console.log({data});
-            dispatch({type: "set_results", payload: data})
-            dispatch({type: "set_loading", payload: false})
-            // setData(resp)
-        })
-        } catch(e) {
-          dispatch({type: "set_loading", payload: false})
-          console.log({e})
-        }
-      })
-    } catch(err) {
-      dispatch({type: "set_loading", payload: false})
-      console.log(err)
-    }
+    doFetch(`${baseUrl}search?q=${path}`, "set_results")
   }
 
   return {data, loading, error, getArtist, getSearch}
