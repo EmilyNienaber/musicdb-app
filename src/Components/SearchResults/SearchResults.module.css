@@ -8,3 +8,12 @@
   justify-content: flex-start;
   gap: 0 3%;
 }
+
+@media (max-width: 850px) {
+  .body {
+    flex-direction: column;
+    gap: 0;
+    flex-wrap: nowrap;
+    padding: 0;
+  }
+}

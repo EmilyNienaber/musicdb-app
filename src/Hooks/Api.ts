@@ -4,7 +4,6 @@ import { Context } from "../Context/Context";
 export const useFetch = (path: string) => {
   const baseUrl = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/';
   const [state, dispatch] = useContext(Context);
-  const [data, setData] : any = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   
@@ -25,14 +24,15 @@ export const useFetch = (path: string) => {
             dispatch({type, payload: data})
             dispatch({type: "set_loading", payload: false})
         })
-        } catch(e) {
+        } catch(e:any) {
           dispatch({type: "set_loading", payload: false})
-          console.log({e})
+          console.log("DEEP ERROR" + e.message)
         }
       })
-    } catch(err) {
+    } catch(err: any) {
       dispatch({type: "set_loading", payload: false})
-      console.log(err)
+      dispatch({type: "set_error", payload: err})
+      console.log('ERROR' + err.message)
     }
   }
 
@@ -54,6 +54,6 @@ export const useFetch = (path: string) => {
     doFetch(`${baseUrl}search?q=${path}`, "set_results")
   }
 
-  return {data, loading, error, getArtist, getSearch}
+  return {getArtist, getSearch}
 }
 

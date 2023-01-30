@@ -1,10 +1,10 @@
 .body {
   position: relative;
   display: flex;
-  height: 1em;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  /* width: 100%; */
 }
 
 .infoBanner {
@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: stretch;
   border: 1px solid rgba(90, 90, 90, 0.5);
+  width: 100%;
 }
 
 .imageContainer {
@@ -24,21 +25,28 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 2em 15em 10em 6em;
+  padding: 8% 5%;
   background-color: lightgray;
   position: relative;
   overflow: hidden;
+  height: fit-content;
 }
 
 .imageContainer * {
+  height: auto;
   text-align: left;
   z-index: 1;
+  text-shadow:
+        0.03em 0 white,
+        0 0.03em white,
+        -0.03em 0 white,
+        0 -0.03em white;
 }
 
 .artistName {
   margin: 1em 0;
   /* font-weight: 700; */
-  /* font-size: large; */
+  font-size: 2.5em;
 }
 
 .artistInfo {
@@ -47,7 +55,7 @@
 
 .fans {
   position: relative;
-  color: gray;
+  color: black;
   margin: 0 0 1em 0;
 }
 
@@ -63,7 +71,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 0.7em;
+  margin: 0.7em 0;
   border: 1px solid gray;
   opacity: 0.3;
 }
@@ -84,8 +92,42 @@
 
 .backgroundImage {
   position: absolute;
-  top:-50%;
+  top: 0;
+  transform: translateY(-30%);
   left: 0;
   width: 100%;
   z-index: 0;
+}
+
+@media (max-width: 850px) {
+  .infoBanner {
+    flex-direction: column;
+    border: none;
+  }
+
+  .imageContainer {
+    height: auto;
+    overflow: hidden;
+    padding: 1rem 0;
+    background: white;
+    flex: 0;
+    flex-grow: 3;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid lightgray;
+  }
+
+  .imageContainer > :not(:first-child) {
+    padding: 0 1em;
+  }
+
+  .backgroundImage {
+    position: relative;
+    width: 100%;
+    transform: none;
+  }
+
+  .fans:after {
+    display: none;
+  }
 }

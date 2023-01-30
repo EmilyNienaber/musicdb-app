@@ -35,8 +35,9 @@ const SearchBar = () => {
 				type='text'
 				value={search}
 				onChange={handleChange}
-				placeholder='Search for a track'
+				placeholder='Search'
 			/>
+			<FaSearch className={styles.iconMobile} />
 		</div>
 	);
 };

@@ -34,19 +34,22 @@ const Artist = () => {
 						src={state.artist.picture_big}
 						className={styles.backgroundImage}
 					/>
-					<h1 className={styles.artistName}>{state.artist.name}</h1>
-					<div className={styles.fans}>
-						<b>{Math.floor(state.artist.nb_fan / 1000)}K</b> Fans
+					<div>
+						<h1 className={styles.artistName}>{state.artist.name}</h1>
+						<div className={styles.fans}>
+							<b>{Math.floor(state.artist.nb_fan / 1000)}K</b> Fans
+						</div>
+						{/* Added this because it's on the example, but there is no info blurb from the API, so I'm removing it from the front-end
+							<p className={styles.artistInfo}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+							enim ad minim veniam, quis nostrud exercitation ullamco laboris
+							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+							reprehenderit in voluptate velit esse cillum dolore eu fugiat
+							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+							sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p> */}
 					</div>
-					<p className={styles.artistInfo}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat. Duis aute irure dolor in
-						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-						culpa qui officia deserunt mollit anim id est laborum.
-					</p>
 				</div>
 				<TopTracks />
 			</div>
