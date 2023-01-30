@@ -4,6 +4,8 @@ import { useFetch } from "../../Hooks/Api";
 import styles from "./Artist.module.css";
 import { Context } from "../../Context/Context";
 import Loader from "../../Components/Loader/Loader";
+import Albums from "../../Components/Albums/Albums";
+import TopTracks from "../../Components/TopTracks/TopTracks";
 
 const Artist = () => {
 	const { id } = useParams();
@@ -46,8 +48,9 @@ const Artist = () => {
 						culpa qui officia deserunt mollit anim id est laborum.
 					</p>
 				</div>
-				<div className={styles.topTracksContainer}>Top Tracks</div>
+				<TopTracks />
 			</div>
+			<Albums />
 		</div>
 	);
 };

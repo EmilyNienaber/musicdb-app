@@ -12,7 +12,6 @@ const Home = () => {
 		if (state.loading) {
 			return <Loader />;
 		}
-		console.log(state);
 		if (!state.results || !state.results.data) {
 			return <h1>Search for an artist or song</h1>;
 		} else {

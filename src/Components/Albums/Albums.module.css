@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card {
+  overflow: hidden;
+  flex: 1;
+  flex-basis: 23%;
+  margin: 1%;
+}
+
+.albumList {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  font-weight: 500;
+  overflow: hidden;
+  margin: 0.5em 0;
+}
+
+.image {
+  width: 100%;
+}
+
+.releaseDate {
+  font-weight: 500;
+  opacity: 0.5;
+  margin: 0;
+}

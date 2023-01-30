@@ -1,23 +1,30 @@
 export const reducer = (state: any, action: {type: string; payload: any}) => {
-  console.log({action})
   switch (action.type) {
     case "set_loading":
-      console.log({LOADING: action.payload})
       return {
         ...state,
         loading: action.payload
       }
-    case "set_results" :
+    case "set_results":
       return {
         ...state,
         results: action.payload
       }
-    case "set_artist" : {
+    case "set_artist": 
       return {
         ...state,
         artist: action.payload
       }
-    }
+    case "set_albums":
+      return {
+        ...state,
+        albums: action.payload
+      }
+    case "set_top":
+      return {
+        ...state,
+        topTracks: action.payload
+      }
     
 
     default:
@@ -29,4 +36,6 @@ export const initialState = {
   loading: false,
   results: [],
   artist: [],
+  albums: {data: []},
+  topTracks: {data: []}
 }

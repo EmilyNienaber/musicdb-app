@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SearchResults.module.css";
-import Card from "../Card/Card";
+import Card from "../Card/SongCard";
 
 export interface ResultType {
 	album: {
