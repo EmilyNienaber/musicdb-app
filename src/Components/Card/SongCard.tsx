@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Card.module.css";
+import styles from "./SongCard.module.css";
 
 interface Props {
 	imageUri: string;

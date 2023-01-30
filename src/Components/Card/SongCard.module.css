@@ -86,3 +86,11 @@
   width: 100%;
   aspect-ratio: 1 / 1;
 }
+
+@media (max-width: 850px) {
+  .body {
+    flex: 1;
+    max-width: 75%;
+    width: 75%;
+  }
+}

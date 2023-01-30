@@ -25,8 +25,17 @@ export const reducer = (state: any, action: {type: string; payload: any}) => {
         ...state,
         topTracks: action.payload
       }
-    
-
+    case "set_auth":
+      console.log('setting auth', action.payload)
+      return {
+        ...state,
+        auth: action.payload
+      }
+    case "set_error":
+      return {
+        ...state,
+        error: action.payload
+      }
     default:
       return state
   }
@@ -37,5 +46,7 @@ export const initialState = {
   results: [],
   artist: [],
   albums: {data: []},
-  topTracks: {data: []}
+  topTracks: {data: []},
+  auth: null,
+  error: null
 }
