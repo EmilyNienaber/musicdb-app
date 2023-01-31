@@ -93,4 +93,8 @@
     max-width: 75%;
     width: 75%;
   }
+
+  .album {
+    display: none;
+  }
 }

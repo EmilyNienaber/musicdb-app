@@ -6,6 +6,7 @@ import { Context } from "../../Context/Context";
 import Loader from "../../Components/Loader/Loader";
 import Albums from "../../Components/Albums/Albums";
 import TopTracks from "../../Components/TopTracks/TopTracks";
+import Header from "../../Components/Header/Header";
 
 const Artist = () => {
 	const { id } = useParams();
@@ -26,20 +27,22 @@ const Artist = () => {
 	}
 
 	return (
-		<div className={styles.body}>
-			<div className={styles.infoBanner}>
-				<div className={styles.imageContainer}>
-					<img
-						alt={`${state.artist.name}-bg-img`}
-						src={state.artist.picture_big}
-						className={styles.backgroundImage}
-					/>
-					<div>
-						<h1 className={styles.artistName}>{state.artist.name}</h1>
-						<div className={styles.fans}>
-							<b>{Math.floor(state.artist.nb_fan / 1000)}K</b> Fans
-						</div>
-						{/* Added this because it's on the example, but there is no info blurb from the API, so I'm removing it from the front-end
+		<>
+			<Header />
+			<div className={styles.body}>
+				<div className={styles.infoBanner}>
+					<div className={styles.imageContainer}>
+						<img
+							alt={`${state.artist.name}-bg-img`}
+							src={state.artist.picture_big}
+							className={styles.backgroundImage}
+						/>
+						<div>
+							<h1 className={styles.artistName}>{state.artist.name}</h1>
+							<div className={styles.fans}>
+								<b>{Math.floor(state.artist.nb_fan / 1000)}K</b> Fans
+							</div>
+							{/* Added this because it's on the example, but there is no info blurb from the API, so I'm removing it from the front-end
 							<p className={styles.artistInfo}>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -49,12 +52,13 @@ const Artist = () => {
 							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 							sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</p> */}
+						</div>
 					</div>
+					<TopTracks />
 				</div>
-				<TopTracks />
+				<Albums />
 			</div>
-			<Albums />
-		</div>
+		</>
 	);
 };
 

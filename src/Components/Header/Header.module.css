@@ -14,3 +14,10 @@
   font-size: large;
   border-bottom: 1px solid gray;
 }
+
+.logo{
+  cursor: pointer;
+  font-weight: 500;
+  background-color: lightblue;
+  padding: 3px 7px;
+}
