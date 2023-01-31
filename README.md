@@ -53,10 +53,10 @@ Which of the following are valid declaration(s) for an image? Choose all that ap
 
 Pick ONE OR MORE options
 
-- [ ] <img src="profile.jpg" title="Profile" style="width: 50vw; height: 50vw" />
-- [ ] <img href="profile.jpg" alt="Profile" style="width: 50px; height: 50px" />
-- [ ] <img href="logo.ico" alt="image/x-icon" />
-- [x] <img src="/images/logo.svg" width="50%" height="50%" />
+- [x] ```<img src="profile.jpg" title="Profile" style="width: 50vw; height: 50vw" />```
+- [ ] ```<img href="profile.jpg" alt="Profile" style="width: 50px; height: 50px" />```
+- [ ] ```<img href="logo.ico" alt="image/x-icon" />```
+- [x] ```<img src="/images/logo.svg" width="50%" height="50%" />```
 
 ### 6. Doctype
 
