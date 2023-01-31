@@ -5,6 +5,7 @@ import styles from "./Home.module.css";
 import { Context } from "../../Context/Context";
 import SearchResults from "../../Components/SearchResults/SearchResults";
 import Loader from "../../Components/Loader/Loader";
+import Header from "../../Components/Header/Header";
 
 const Home = () => {
 	const [state, dispatch] = useContext(Context);
@@ -47,7 +48,12 @@ const Home = () => {
 		}
 	};
 
-	return <div className={styles.body}>{renderData()}</div>;
+	return (
+		<div className={styles.body}>
+			<Header />
+			{renderData()}
+		</div>
+	);
 };
 
 export default Home;

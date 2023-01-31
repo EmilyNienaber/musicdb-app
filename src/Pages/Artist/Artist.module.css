@@ -57,10 +57,13 @@
   position: relative;
   color: black;
   margin: 0 0 1em 0;
+  font-size: large;
+  text-shadow: none;
 }
 
 .fans b {
   color: black;
+  text-shadow: none;
 }
 
 .fans:after {
@@ -72,7 +75,7 @@
   top: 100%;
   left: 0;
   margin: 0.7em 0;
-  border: 1px solid gray;
+  border: 1px solid black;
   opacity: 0.3;
 }
 
@@ -130,4 +133,9 @@
   .fans:after {
     display: none;
   }
+}
+
+
+*:first-child li.parent:last-child > :nth-child(1) {
+  color: red;
 }
